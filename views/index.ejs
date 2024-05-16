@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>User List</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <div>
+            <h1>Users</h1>
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Phone</th>
+                <th>Email</th>
+            </tr>
+            <% users.forEach(user => { %>
+            <tr>
+                <td><%= user.id %></td>
+                <td><%= user.name %></td>
+                <td><%= user.age %></td>
+                <td><%= user.phone %></td>
+                <td><%= user.email %></td>
+            </tr>
+            <% }); %>
+        </table>
+
+        <h1>เพิ่มข้อมูล</h1> 
+        <form action="/submit" method="POST"> 
+            <label for="name">name:</label> 
+            <input type="text" id="name" name="names" required><br> 
+            
+            <label for="ages">age:</label>
+            <input type="text" id="ages" name="ages" required><br>
+    
+            <label for="phones">phones:</label> 
+            <input type="text" id="phones" name="phones" required><br> 
+            
+            <label for="email">email:</label>
+            <input type="email" id="email" name="email" required><br>
+        
+            <button type="submit">บันทึก</button> </form>
+        
+
+    </body>
+</html>
